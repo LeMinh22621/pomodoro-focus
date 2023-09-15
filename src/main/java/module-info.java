@@ -5,6 +5,6 @@ module minh.lehong.pomodorofocus {
 
     opens minh.lehong.pomodorofocus to javafx.fxml;
     exports minh.lehong.pomodorofocus;
-    exports minh.lehong.pomodorofocus.viewmodel;
-    opens minh.lehong.pomodorofocus.viewmodel to javafx.fxml;
+    exports minh.lehong.pomodorofocus.view;
+    opens minh.lehong.pomodorofocus.view to javafx.fxml;
 }
