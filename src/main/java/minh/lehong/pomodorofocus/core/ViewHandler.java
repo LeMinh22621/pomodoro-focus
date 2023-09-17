@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import minh.lehong.pomodorofocus.PomofocusApplication;
+import minh.lehong.pomodorofocus.view.HomePageController;
 import minh.lehong.pomodorofocus.view.LoginController;
 
 public class ViewHandler {
@@ -29,12 +30,12 @@ public class ViewHandler {
 
     public void openLoginView() {
         try {
-            FXMLLoader loader = new FXMLLoader(PomofocusApplication.class.getResource("login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(PomofocusApplication.class.getResource("homepage/home-page-view.fxml"));
             Parent parent = loader.load();
 
             // init login controller
-            LoginController loginController = loader.getController();
-            loginController.init(this, viewModelFactory.getLoginViewModel());
+            HomePageController homePageController = loader.getController();
+            homePageController.init(this, viewModelFactory.getHomePageViewModel());
 
             // set scene and stage
             loginScene = new Scene(parent);

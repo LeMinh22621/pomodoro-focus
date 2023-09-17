@@ -9,17 +9,10 @@ import java.util.Objects;
 
 public class LoginViewModel {
     // properties
-    private StringProperty emailProperty;
-    private StringProperty passwordProperty;
-
-    private LoginRepository loginRepository;
-
+    private StringProperty emailProperty = new SimpleStringProperty();;
+    private StringProperty passwordProperty = new SimpleStringProperty();;
     // repository
-    // init block
-    {
-        emailProperty = new SimpleStringProperty();
-        passwordProperty = new SimpleStringProperty();
-    }
+    private LoginRepository loginRepository;
 
     public LoginViewModel(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
@@ -52,12 +45,10 @@ public class LoginViewModel {
 
     public void loginViewModelAction() {
         User user = loginRepository.login(this.getEmailProperty(), this.getPasswordProperty());
-
         if (Objects.nonNull(user)) {
             this.setEmailProperty("");
             this.setPasswordProperty("");
             System.out.println(user);
         }
-
     }
 }
